@@ -1,3 +1,28 @@
 # TypeScript + React with Vite & Yarn pnp
 
 The Boilerplate with TypeScript + React + Vite + Yarn pnp
+
+# tsconfig
+
+noImplicitAny: any를 설정시, 해당 변수의 타입이 모호해지기 때문에 정적 타입을 명확하게 해주는 TypeScript의 장점이 없어지게 됨으로 any 타입은 하지 않는 것으로 설정했습니다!
+
+strictNullChecks: null이나 undefined는 엄연히 다른 정의를 가지고 있기 때문에 명확한게 좋다고 생각합니다.
+
+noFallthroughCasesInSwitch: switch문에서 만약 break나 return이 없다면 분명 의도와는 확연히 다른 코드가 나올 것입니다. 따라서 실수 방지를 위해 설정했습니다.
+
+noImplicitReturns: 함수의 Type을 명확하고 철저하게 하기 위해서 설정했습니다.
+
+noImplicitThis: 헷갈릴 수 있는 this를 막고자 설정했습니다.
+
+noPropertyAccessFromIndexSignature: 변수인 [key]를 설정했다면, 불러올 때에도 변수를 통해서 불러오게 해야한다고 생각합니다.
+
+noUncheckedIndexedAccess: 원래는 변수 [key]를 불러오면 해당 value의 type이 변수에 설정되었는데, [key]는 있을 수도 없을 수도 있기 때문에 undefined, 또한 함께 type 반환을 시켜줄 수 있도록 해당 옵션을 설정합니다.
+
+noUnusedLocals: 쓸데없는 변수가 있어서는 안된다고 생각합니다. 이건 메모리 낭비 및 코드 낭비입니다. 😱
+
+noUnusedParameters: 쓸데없는 파라미터 또한, 메모리 낭비 및 코드 낭비! 방지용 입니다.
+
+Dev용 config
+sourceMap: 난독화 되는 코드를 막아줘서 브라우저에서도 디버깅할 수 있게 해줍니다.
+
+extendedDiagnostics: compile시에 시간이 얼마나 걸리는지 측정해주는 option입니다.
