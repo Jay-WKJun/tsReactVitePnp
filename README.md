@@ -26,3 +26,21 @@ Dev용 config
 sourceMap: 난독화 되는 코드를 막아줘서 브라우저에서도 디버깅할 수 있게 해줍니다.
 
 extendedDiagnostics: compile시에 시간이 얼마나 걸리는지 측정해주는 option입니다.
+
+## editorConfig
+
+> editorConfig는 project내의 텍스트 파일들의 포맷들을 맞춰줍니다.
+
+특정 언어, 에디터, 프레임워크에 구애받지 않고 모든 곳에서 사용할 수 있기 때문에 매우 유용합니다.
+
+아래와 같은 문제를 해결합니다.
+
+- tab과 space를 섞어쓰는 문제
+- line Ending을 섞어쓰는 문제 (git에서는 큰 문제가 되지 않습니다.)
+- 문자 encoding이 맞지 않는 문제
+- 여러 indenting 포맷의 문제
+- 등등... text format이 맞지 않는 문제
+
+### refs
+
+https://www.freecodecamp.org/news/how-to-use-editorconfig-to-standardize-code-styles/
