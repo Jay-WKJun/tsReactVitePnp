@@ -2,7 +2,7 @@
 
 The Boilerplate with TypeScript + React + Vite + Yarn pnp
 
-# tsconfig
+## tsconfig
 
 noImplicitAny: any를 설정시, 해당 변수의 타입이 모호해지기 때문에 정적 타입을 명확하게 해주는 TypeScript의 장점이 없어지게 됨으로 any 타입은 하지 않는 것으로 설정했습니다!
 
@@ -44,3 +44,27 @@ extendedDiagnostics: compile시에 시간이 얼마나 걸리는지 측정해주
 ### refs
 
 https://www.freecodecamp.org/news/how-to-use-editorconfig-to-standardize-code-styles/
+
+## eslintrc
+
+eslint 설정
+
+### babel
+
+vite는 기본적으로 import.meta, 즉 esm을 지원하는 브라우저에서만 작동하도록 빌드합니다.
+
+[@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)를 통해 해결할 수 있다고 하여, 별도의 babel은 셋팅하지 않는 것으로 판단했습니다.
+
+[Vite - browser compatibility](https://vitejs.dev/guide/build.html#browser-compatibility)
+
+### plugin과 extension
+
+plugin은 eslint에서 따로 제공하지않는 custom rule을 주입할 수 있는 것이고 extension은 미리 작성된 eslintrc를 확장해서 사용한다는 의미입니다.
+
+[difference-between-eslint-extends-and-plugins](https://prateeksurana.me/blog/difference-between-eslint-extends-and-plugins/)
+
+## prettier
+
+prettier의 옵션들은 모두 eslint에서 가능합니다.
+
+이러한 설정의 중복은 관리 소요를 더 크게 한다고 생각하여, prettier의 auto formatting이 아닌, eslint --fix를 save시에 발동하는 방법으로 auto formatting을 설정하려고 합니다.

@@ -4,8 +4,8 @@
     "**/.pnp.*": true,
     "**/*.gz": true
   },
-  "typescript.tsdk": "../.yarn/sdks/typescript/lib",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "eslint.packageManager": "yarn",
-  "eslint.nodePath": "../.yarn/sdks"
+  "eslint.nodePath": ".yarn/sdks"
 }

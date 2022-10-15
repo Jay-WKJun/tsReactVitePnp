@@ -1,0 +1,73 @@
+module.exports = {
+  root: true,
+
+  env: {
+    es6: true,
+    node: true,
+    browser: true,
+  },
+
+  parser: "@typescript-eslint/parser",
+  // https://eslint.org/docs/latest/user-guide/configuring/language-options#specifying-parser-options
+  parserOptions: {
+    ecmaVersion: "latest",
+    ecmaFeatures: { jsx: true },
+  },
+
+  plugins: ["@typescript-eslint", "import", "react", "react-hooks", "jsx-a11y"],
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "airbnb", "airbnb/hooks"],
+
+  settings: {
+    react: { version: "detect" },
+    "import/parser": {
+      "@typescript-eslint/parser": [".ts", ".tsx"],
+    },
+    "import/resolver": {
+      typescript: {},
+    },
+  },
+
+  rules: {
+    // JavaScript
+    "class-methods-use-this": "off",
+    curly: ["error", "all"],
+    "no-console": ["warn", { allow: ["warn", "error"] }],
+    "no-empty-function": "off",
+    "no-implicit-coercion": "error",
+    "no-redeclare": "off",
+    "no-shadow": "off",
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+
+    // TypeScript
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-redeclare": ["warn", { ignoreDeclarationMerge: true }],
+    "@typescript-eslint/no-use-before-define": "off",
+
+    // Import
+    "import/extensions": ["error", "ignorePackages", { js: "never", jsx: "never", ts: "never", tsx: "never" }],
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { devDependencies: ["**/*.config.{js, ts}", "**/*.spec.{js, jsx, ts, tsx}"] },
+    ],
+    "import/prefer-default-export": "off",
+
+    // React
+    "react/function-component-definition": [
+      "error",
+      { namedComponents: "function-declaration", unnamedComponents: "arrow-function" },
+    ],
+    "react/jsx-filename-extension": ["error", { extensions: [".jsx", ".tsx"] }],
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
+  },
+};
