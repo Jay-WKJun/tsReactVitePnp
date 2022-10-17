@@ -53,9 +53,19 @@ eslint 설정
 
 vite는 기본적으로 import.meta, 즉 esm을 지원하는 브라우저에서만 작동하도록 빌드합니다.
 
-[@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)를 통해 해결할 수 있다고 하여, 별도의 babel은 셋팅하지 않는 것으로 판단했습니다.
+따라서 module을 지원하지 않는 브라우저에서도 코드가 작동할 수 있도록 변환해주는 babel이 적용되어 있지 않습니다.
+
+[@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)를 통해 해결할 수 있다고 합니다.
 
 [Vite - browser compatibility](https://vitejs.dev/guide/build.html#browser-compatibility)
+
+- esbuild의 한계
+
+vite에서 babel은 [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react)를 통해 build시에만 babel을 사용하고 있습니다.
+
+dev시에는 매우 빠른 ESbuild를 사용하는데, ESbuild는 아직 시험단계이어서 class instance나 Decorator같은 기능을 사용하지 못합니다.
+
+[vite-plugin-babel](https://www.npmjs.com/package/vite-plugin-babel)이 해결해 줄 수 있지만, ESbuild의 속도를 늦출 수 있어 정말 필요할 때만 사용하라고 권고하고 있습니다.
 
 ### plugin과 extension
 
@@ -73,7 +83,7 @@ prettier의 옵션들은 모두 eslint에서 가능합니다. **따라서 따로
 
 commit 관련 규칙과 도구들입니다.
 
-## husky
+## [husky](https://typicode.github.io/husky/#/)
 
 git hook을 편하게 쓸 수 있도록 도와줍니다.
 
@@ -85,11 +95,9 @@ husky 혼자선 아무것도 못하지만, 여러 도구들을 husky hook에 넣
 
 ### refs
 
-https://typicode.github.io/husky/#/
-
 https://library.gabia.com/contents/8492/
 
-## commitLint
+## [commitLint](https://commitlint.js.org/#/)
 
 협업할 때에 commit message의 형식이 모두 제각각이라면, commit history 파악이 쉽지 않을 것 입니다.
 
@@ -98,8 +106,6 @@ commitLint로 여러 사람들의 commit message의 형식을 통일할 수 있�
 여러가지 commit message 형식이 있지만, 그 중 가장 유명한 것은 [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) 입니다.
 
 ### refs
-
-https://commitlint.js.org/#/
 
 https://blog.flynnpark.dev/m/13
 
@@ -122,7 +128,5 @@ git에서 staged된 파일만을 골라 eslint 등의 command를 실행시킬 �
 하지만, lint-staged를 통해 정확히 필요한 파일에만 lint를 적용할 수 있습니다.
 
 ### refs.
-
-
 
 https://www.huskyhoochu.com/how-to-use-lint-staged/
