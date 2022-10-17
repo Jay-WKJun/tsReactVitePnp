@@ -85,6 +85,8 @@ commit 관련 규칙과 도구들입니다.
 
 ## [husky](https://typicode.github.io/husky/#/)
 
+![git_hooks_world](https://user-images.githubusercontent.com/40374023/196177559-c55e00d9-d6da-4ac0-bab3-8a9dcca50a5f.jpeg)
+
 git hook을 편하게 쓸 수 있도록 도와줍니다.
 
 git에서 어떤 action이 일어날 때, 그 action의 전과 후 처리를 합니다.
